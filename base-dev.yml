@@ -1,0 +1,24 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: tensquare-base  #基础微服务，此处不要写下划线，因为spring cloud有个地方不支持
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.135.132:3306/tensquare_base?useUnicode=true&characterEncoding=UTF8
+    username: root
+    password: 123456
+  jpa:
+    show-sql: true  #是否在控制的打印sql语句
+    database: mysql #数据库的品牌
+    generate-ddl: false #是否生成ddl语句
+  rabbitmq:
+    host: 192.168.135.132    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.135.132:6868/eureka
+  instance:
+   prefer-ip-address: true
+sms:
+  ip: 192.168.135.132
